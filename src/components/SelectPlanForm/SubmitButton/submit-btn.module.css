@@ -1,0 +1,13 @@
+.btn {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.0625rem;
+    line-height: 1.5rem;
+    border: none;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background: linear-gradient(88.95deg, #FFAA60 0%, #FF5F8D 100%);
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+}

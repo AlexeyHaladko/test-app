@@ -1,0 +1,24 @@
+.videoWrapper {
+    display: flex;
+    position: relative;
+    background: url("../../assets/background.png");
+    border-bottom-left-radius: 90%;
+    border-bottom-right-radius: 90%;
+    align-items: end;
+    justify-content: center;
+    min-height: 12.5rem;
+    background-size: contain;
+}
+
+.img {
+    position: absolute;
+    border-radius: 1.25rem;
+    background-color: #FFFFFF;
+    height: 5rem;
+    width: 5rem;
+    bottom: -15%;
+    background-image: url("../../assets/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0.1875rem 0.1875rem 0.1875rem #222B4126;
+}

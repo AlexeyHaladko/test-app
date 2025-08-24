@@ -1,0 +1,85 @@
+
+.mainInfo {
+    margin-top: 1.875rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainInfoTitle {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    color: #DB2777
+}
+
+.mainInfoSubtitle {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    color: #111827;
+    max-width: 60%;
+}
+
+.mainInfoRegularText {
+    font-size: 1.0625rem;
+    line-height: 1.5rem;
+    color: #374151
+}
+
+.wings {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.wings > * {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+.wings::before,
+.wings::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 4.875rem;
+    height: 6.25rem;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wings::before {
+    right: 0;
+    background-image: url('../../assets/wing_left.svg');
+}
+
+.wings::after {
+    left: 0;
+    background-image: url('../../assets/wing_right.svg');
+}
+
+
+/*
+header color - #DB2777
+header fs - 28px
+header lh - 34px
+
+subheader color #111827
+subheader fs - 20px
+subheader lh - 25px
+
+main text - 17px
+main text color - #374151
+main text lineheight - 24px
+
+*/
