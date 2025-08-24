@@ -4,7 +4,7 @@ export const Switch = () => {
     return (
         <>
             <label className={styles.switch}>
-                <input type="checkbox"/>
+                <input type="checkbox" />
                 <span className={`${styles.slider} ${styles.round}`}></span>
             </label>
         </>
