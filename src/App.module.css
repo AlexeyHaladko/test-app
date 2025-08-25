@@ -18,3 +18,10 @@
     flex-direction: column;
     gap: 0.625rem;
 }
+
+.container {
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}

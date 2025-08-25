@@ -1,12 +1,12 @@
 .videoWrapper {
     display: flex;
     position: relative;
-    background: url("../../assets/background.png");
+    background: url("../../assets/trying_to_сonceive.gif");
     border-bottom-left-radius: 90%;
     border-bottom-right-radius: 90%;
     align-items: end;
     justify-content: center;
-    min-height: 12.5vh;
+    min-height: 25%;
     background-size: cover;
 }
 

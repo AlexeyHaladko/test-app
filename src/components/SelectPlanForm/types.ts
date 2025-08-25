@@ -5,7 +5,7 @@ export enum PlanType {
 
 export type PlanItem = {
     planType: PlanType;
-    pricePerYear?: string;
+    pricePerYear: string | null;
     pricePerMonth: string;
     mainText: string;
 };
