@@ -55,8 +55,9 @@
 
 .discountWrapper {
     position: absolute;
-    top: 0;
-    right: 0;
+   /* //border width calc*/
+    top: -1px;
+    right: -1px;
     background: linear-gradient(263.53deg, #DB2777 6.42%, #EC4899 92.52%);
     padding: 0.3125rem;
     color: white;

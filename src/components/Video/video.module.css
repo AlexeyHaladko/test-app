@@ -22,3 +22,14 @@
     background-position: center;
     box-shadow: 0.1875rem 0.1875rem 0.1875rem #222B4126;
 }
+
+.skip {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    top: 10%;
+    right: 10%;
+    border: none;
+    background: transparent;
+}
