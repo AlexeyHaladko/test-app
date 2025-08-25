@@ -1,6 +1,6 @@
 import styles from "./select-plan.module.css";
 import { Plan } from "./Plan";
-import { PlanType } from "./types";
+import { PlanItem, PlanType } from "./types";
 import { SubmitBtn } from "./SubmitButton";
 import { useCallback, useState } from "react";
 import { TrialToggle } from "./TrialToggle";
@@ -12,7 +12,7 @@ export const SelectPlanForm = () => {
     const [selectedPlan, setSelectedPlan] = useState<PlanType>(PlanType.yearly);
     const [isTrial, setIsTrial] = useState<boolean>(false);
 
-    const plans = useCreatePlanFromQuery();
+    const plans: PlanItem[] = useCreatePlanFromQuery();
     const onPlanSelected = (planType: PlanType) => {
       setSelectedPlan(planType);
     }
