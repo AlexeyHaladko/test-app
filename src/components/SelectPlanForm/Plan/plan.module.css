@@ -7,6 +7,18 @@
     align-items: center;
     border-radius: 0.75rem;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* skips double-tap delay on iOS */
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    border: none;
+
+}
+
+.planWrapper:focus-visible {
+    outline: 2px solid #2684ff; /* keep accessible focus */
+    outline-offset: 2px;
 }
 
 .mainText {
@@ -48,6 +60,7 @@
     background: linear-gradient(263.53deg, #DB2777 6.42%, #EC4899 92.52%);
     padding: 0.3125rem;
     color: white;
+    border: none;
     border-bottom-left-radius: 0.625rem;
     border-top-right-radius: inherit;
 }

@@ -2,11 +2,12 @@
 .mainInfo {
     margin-top: 1.875rem;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 3rem;
 }
 
 .mainInfoTitle {

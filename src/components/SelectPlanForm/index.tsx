@@ -1,29 +1,39 @@
 import styles from "./select-plan.module.css";
 import { Plan } from "./Plan";
-import { PlanItem, PlanType } from "./types";
+import { PlanType } from "./types";
 import { SubmitBtn } from "./SubmitButton";
-import { useState } from "react";
-
-const PLANS: PlanItem[] = [
-    { planType: PlanType.agreement, mainText: "Free trial for 7 days", helperText: "No payment now, cancel anytime" },
-    { planType: PlanType.yearly, mainText: "Yearly plan", helperText: "12 mo • $59.99" },
-    { planType: PlanType.monthly, mainText: "Monthly plan", helperText: "$59.99" },
-];
+import { useCallback, useState } from "react";
+import { TrialToggle } from "./TrialToggle";
+import { useNavigate } from 'react-router-dom';
+import { useCreatePlanFromQuery } from "../../utils/createPlanFromQuery";
+import { OutputQueryParams } from "../../constants";
 
 export const SelectPlanForm = () => {
     const [selectedPlan, setSelectedPlan] = useState<PlanType>(PlanType.yearly);
+    const [isTrial, setIsTrial] = useState<boolean>(false);
+
+    const plans = useCreatePlanFromQuery();
     const onPlanSelected = (planType: PlanType) => {
-        if (planType !== PlanType.agreement) {
-            setSelectedPlan(planType);
-        }
+      setSelectedPlan(planType);
     }
 
+    const onCheckTrialToggle = useCallback((checked: boolean) => {
+        setIsTrial(checked);
+    }, []);
+
+    const navigate = useNavigate();
+
+    const onSubmit = () => {
+        navigate(`/submit?${OutputQueryParams.selectedPlan}=${selectedPlan}&${OutputQueryParams.isTrial}=${isTrial}`);
+    }
     return (
         <section className={styles.planSection}>
-            {PLANS.map((p) => (
-                <Plan key={p.planType} {...p} selected={selectedPlan === p.planType} onSelect={onPlanSelected}/>
+            <TrialToggle onToggle={onCheckTrialToggle} isTrialSelected={isTrial}/>
+            {plans.map((plan) => (
+                <Plan key={plan.planType} {...plan} selected={selectedPlan === plan.planType} onSelect={onPlanSelected}/>
             ))}
-            <SubmitBtn/>
+            <SubmitBtn onClick={onSubmit}/>
         </section>
     )
 }
+//http://127.0.0.1:5173/test-app/?yearly_price=$1243&yearly_price_per_month=$1243&monthly_price=$12344

@@ -1,7 +1,7 @@
 import styles from "./submit-btn.module.css";
 
-export const SubmitBtn = () => {
+export const SubmitBtn = ({ onClick }: {onClick: () => void}) => {
     return (
-        <button onClick={() => console.log("123")} className={styles.btn}>Join Now</button>
+        <button onClick={onClick} className={styles.btn}>Join Now</button>
     )
 }

@@ -10,20 +10,10 @@ export function withDisableMobileZoom<P extends object>(Wrapped: ComponentType<P
             document.addEventListener('gesturechange', prevent as EventListener, {passive: false});
             document.addEventListener('gestureend', prevent as EventListener, {passive: false});
 
-            // double-tap
-            let last = 0;
-            const onTouchEnd = (e: TouchEvent) => {
-                const now = Date.now();
-                if (now - last <= 300) e.preventDefault();
-                last = now;
-            };
-            document.addEventListener('touchend', onTouchEnd, {passive: false});
-
             return () => {
                 document.removeEventListener('gesturestart', prevent as EventListener);
                 document.removeEventListener('gesturechange', prevent as EventListener);
                 document.removeEventListener('gestureend', prevent as EventListener);
-                document.removeEventListener('touchend', onTouchEnd);
             };
         }, []);
 

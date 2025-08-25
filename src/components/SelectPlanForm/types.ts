@@ -1,11 +1,11 @@
 export enum PlanType {
     yearly = "yearly",
     monthly = "monthly",
-    agreement = "agreement",
 }
 
 export type PlanItem = {
     planType: PlanType;
+    pricePerYear?: string;
+    pricePerMonth: string;
     mainText: string;
-    helperText: string;
 };
